@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarolinaTech | Professional IT Solutions</title>
+  <meta name="description"
+    content="CarolinaTech delivers trusted computer repair, networking, CCTV installation, printer repair, and complete IT solutions for homes and businesses." />
+  <meta name="keywords"
+    content="IT solutions, computer repair, networking, CCTV installation, printer repair, data recovery, hardware upgrade, IT consulting" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CarolinaTech — Professional IT Solutions" />
+  <meta property="og:description"
+    content="Professional IT services including computer repair, networking, CCTV installation, and business technology solutions." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon placeholder -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563EB'/><text y='22' x='7' font-family='Inter,sans-serif' font-weight='800' font-size='18' fill='white'>C</text></svg>" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════════════ -->
+  <nav id="navbar" class="transparent">
+    <div class="container">
+      <div class="nav-inner">
+
+        <!-- Logo -->
+        <a href="#hero" class="nav-logo" style="flex-direction: column; align-items: flex-start; gap: 2px;">
+          <div style="display: flex; align-items: center; gap: 0.375rem;">
+            <span class="logo-dot"></span>
+            <span>Carolina<span class="logo-accent">Tech</span></span>
+          </div>
+          <span
+            style="font-size: 0.75rem; font-weight: 500; color: rgba(255,255,255,0.7); letter-spacing: 0.5px; padding-left: 14px; line-height: 1; text-transform: none;">Your
+            Personal IT, On Call</span>
+        </a>
+
+        <!-- Links -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about-anchor">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#about">Contact</a></li>
+          <!-- Mobile-only CTA -->
+          <li>
+            <a href="#about" class="btn btn-primary nav-cta-mobile" style="display:none;">Request IT Assistance</a>
+          </li>
+        </ul>
+
+        <!-- Desktop CTA -->
+        <a href="#about" class="nav-cta">Request IT Assistance</a>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section id="hero">
+    <!-- Particle canvas -->
+    <canvas id="hero-canvas"
+      style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+
+    <!-- Right: hero image slideshow -->
+    <div class="hero-bg-image" id="heroSlideshow">
+      <img src="assets/images/slide1.png" class="hero-slide active"
+        alt="IT technician repairing a desktop computer with blue lighting" loading="eager" />
+      <img src="assets/images/slide2.jpg" class="hero-slide" alt="IT professional providing on-site support"
+        loading="lazy" />
+      <div class="hero-blue-glow"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Left: content -->
+        <div class="hero-content">
+
+          <span class="hero-badge">
+            <span class="badge-dot"></span>
+            Reliable IT Solutions for Homes &amp; Businesses
+          </span>
+
+          <h1 class="hero-h1">
+            IT Solutions<br />
+            <span class="blue-line">at Your Doorstep</span>
+          </h1>
+
+          <p class="hero-desc">
+            From computer and laptop repair to CCTV installation, network and peripheral setup,
+            biometric access systems, printer servicing — we
+            bring enterprise-level IT expertise directly to your home, office, café, or venue. Fast,
+            reliable, and professional on-site service you can trust.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#about" class="btn btn-primary btn-lg">
+              Request IT Assistance
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <!-- Contact Bubble Trigger -->
+            <div class="contact-bubble-wrap" id="contactBubbleWrap">
+              <button class="btn btn-secondary btn-lg" id="contactBubbleBtn" type="button" aria-expanded="false"
+                aria-haspopup="menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.9 19.79 19.79 0 0 1 1.61 3.27 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l1.27-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                Contact Us
+                <svg class="bubble-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="18 15 12 9 6 15" />
+                </svg>
+              </button>
+
+              <!-- Popup bubble -->
+              <div class="contact-bubble-popup" id="contactBubblePopup" role="menu" aria-label="Contact options">
+                <div class="bubble-arrow"></div>
+
+                <!-- Viber -->
+                <a href="viber://chat?number=+639496437357" class="cbi-item" role="menuitem">
+                  <div class="cbi-icon" style="background:#7360F2;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                      stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.9 19.79 19.79 0 0 1 1.61 3.27 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l1.27-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                      <path d="M14.5 6.5c1 .33 1.8 1.13 2.13 2.12M16.5 4.5A6 6 0 0 1 19.5 7.5" />
+                    </svg>
+                  </div>
+                  <div class="cbi-info">
+                    <span class="cbi-name">Viber</span>
+                    <span class="cbi-sub">0949 643 7357</span>
+                  </div>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/639496437357" class="cbi-item" role="menuitem" target="_blank"
+                  rel="noopener noreferrer">
+                  <div class="cbi-icon" style="background:#25D366;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                      <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                    </svg>
+                  </div>
+                  <div class="cbi-info">
+                    <span class="cbi-name">WhatsApp</span>
+                    <span class="cbi-sub">0949 643 7357</span>
+                  </div>
+                </a>
+
+                <!-- Call / SMS -->
+                <a href="tel:+639496437357" class="cbi-item" role="menuitem">
+                  <div class="cbi-icon" style="background:#2563EB;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                      stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.9 19.79 19.79 0 0 1 1.61 3.27 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l1.27-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </div>
+                  <div class="cbi-info">
+                    <span class="cbi-name">Call / SMS</span>
+                    <span class="cbi-sub">0949 643 7357</span>
+                  </div>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/carolinatechnician" class="cbi-item" role="menuitem" target="_blank"
+                  rel="noopener noreferrer">
+                  <div class="cbi-icon" style="background:#1877F2;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                      <path
+                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                  </div>
+                  <div class="cbi-info">
+                    <span class="cbi-name">Facebook</span>
+                    <span class="cbi-sub">carolinatechnician</span>
+                  </div>
+                </a>
+
+              </div><!-- /contact-bubble-popup -->
+            </div><!-- /contact-bubble-wrap -->
+          </div>
+
+          <!-- Trust indicators -->
+          <div class="trust-list">
+            <span class="trust-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              Fast Response
+            </span>
+            <span class="trust-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              Certified Technicians
+            </span>
+            <span class="trust-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              Affordable Pricing
+            </span>
+          </div>
+        </div>
+        <!-- /hero-content -->
+
+        <!-- Right column: empty — hero image is absolute positioned -->
+        <div aria-hidden="true"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SERVICES SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section id="services">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-eyebrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          What We Offer
+        </span>
+        <h2 class="section-title">Complete IT Solutions for Every Need</h2>
+        <p class="section-desc">
+          From hardware repairs to network infrastructure, we deliver comprehensive technology
+          services tailored to your requirements.
+        </p>
+      </div>
+
+      <div class="services-grid stagger">
+
+        <!-- 1. Computer Repair, Hardware & Software -->
+        <div class="service-card reveal">
+          <div class="svc-bg" style="background-image: url('assets/images/svc_computer_repair.png')"></div>
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </div>
+          <h3 class="service-title">Computer Repair, Hardware &amp; Software</h3>
+          <p class="service-desc">Desktop diagnostics, hardware repair, virus/malware removal, OS reinstallation,
+            blue screen and boot failure fixes, data recovery from failed drives and corrupted storage, and RAM/SSD/GPU
+            upgrades. Most machines see a 2&ndash;3&times; speed boost with an SSD swap alone. <strong>No fix, no charge
+              on
+              diagnostics.</strong></p>
+        </div>
+
+        <!-- 2. Laptop Repair -->
+        <div class="service-card reveal">
+          <div class="svc-bg" style="background-image: url('assets/images/svc_laptop_repair.png')"></div>
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
+            </svg>
+          </div>
+          <h3 class="service-title">Laptop Repair</h3>
+          <p class="service-desc">Screen replacement, keyboard and trackpad repair, battery and charging port
+            replacement, hinge and casing repair, and motherboard-level diagnostics and soldering for all major brands
+            &mdash; Lenovo, HP, Dell, Asus, Acer, Apple, and more.</p>
+        </div>
+
+        <!-- 3. Network Setup, Configuration & Peripheral Devices -->
+        <div class="service-card reveal">
+          <div class="svc-bg" style="background-image: url('assets/images/svc_network_setup.png')"></div>
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0" />
+              <circle cx="12" cy="20" r="1" fill="currentColor" />
+            </svg>
+          </div>
+          <h3 class="service-title">Network Setup, Configuration &amp; Peripheral Devices</h3>
+          <p class="service-desc">End-to-end network and workstation setup for homes, offices, and internet
+            caf&eacute;s.
+            Covers router/switch config, WiFi optimization, VLAN segmentation, MikroTik hotspot and billing systems,
+            Cat5e/Cat6 structured cabling and patch panels, desktop and laptop deployment, POS system setup, printers,
+            and peripherals. Also includes biometric time and attendance systems &mdash; fingerprint, RFID, and face
+            recognition &mdash; with full software integration and user enrollment.</p>
+        </div>
+
+        <!-- 4. CCTV Installation -->
+        <div class="service-card service-card--cctv reveal" id="cctv-card"
+          onclick="document.getElementById('cctv-modal').classList.add('active')" role="button" tabindex="0"
+          aria-label="CCTV Installation – click to view packages"
+          onkeydown="if(event.key==='Enter')document.getElementById('cctv-modal').classList.add('active')">
+          <div class="svc-bg" style="background-image: url('assets/images/svc_cctv.png')"></div>
+          <div class="service-card-pkg-note">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 12l-8-8-8 8 8 8z" />
+            </svg>
+            Click for Packages
+          </div>
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m23 7-7 5 7 5V7z" />
+              <rect x="1" y="5" width="15" height="14" rx="2" />
+            </svg>
+          </div>
+          <h3 class="service-title">CCTV Installation</h3>
+          <p class="service-desc">IP and analog camera installation for homes, offices, and commercial sites &mdash;
+            night vision, remote mobile viewing via app, motion detection, and flexible system sizes (4, 8, and
+            16-channel packages available). Also installs fire alarm systems (smoke detectors, heat sensors, alarm
+            bells, and control panels). Includes DVR/NVR setup, cable runs, and mobile app configuration.</p>
+        </div>
+
+        <!-- 5. Printer Repair & Maintenance -->
+        <div class="service-card reveal">
+          <div class="svc-bg" style="background-image: url('assets/images/svc_printer_repair.png')"></div>
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+              <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" />
+              <rect x="6" y="14" width="12" height="8" rx="1" />
+            </svg>
+          </div>
+          <h3 class="service-title">Printer Repair &amp; Maintenance</h3>
+          <p class="service-desc">Inkjet and laser printer repair and preventive maintenance &mdash; paper jam clearing,
+            print head cleaning, roller and pickup pad replacement, waste ink pad reset, driver installation, and
+            wired/wireless network printer setup and sharing configuration.</p>
+        </div>
+
+        <!-- 6. Windows & Software Installation -->
+        <div class="service-card reveal">
+          <div class="svc-bg" style="background-image: url('assets/images/svc_windows_install.png')"></div>
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+          </div>
+          <h3 class="service-title">Windows &amp; Software Installation</h3>
+          <p class="service-desc">Fresh Windows installation (10/11), full driver setup, genuine license activation,
+            antivirus configuration, and software deployment &mdash; Microsoft 365, Adobe Creative Suite, accounting
+            tools,
+            POS software, and any business-specific application your workflow requires.</p>
+        </div>
+
+        <!-- 7. IT Consulting & Systems Administration -->
+        <div class="service-card reveal">
+          <div class="svc-bg" style="background-image: url('assets/images/svc_it_consulting.png')"></div>
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3 class="service-title">IT Consulting &amp; Systems Administration</h3>
+          <p class="service-desc">Technology advisory for growing businesses &mdash; network and server infrastructure
+            planning, hardware/software procurement, Active Directory and Microsoft 365 setup and management, vendor
+            evaluation, and on-call systems administration. Backed by hands-on enterprise and government IT
+            experience.</p>
+        </div>
+
+        <!-- 8. Livestreaming & Event AV Setup -->
+        <div class="service-card reveal">
+          <div class="svc-bg" style="background-image: url('assets/images/svc_livestream.png')"></div>
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="2" />
+              <path d="M16.72 7.28a7 7 0 0 1 0 9.44" />
+              <path d="M7.28 7.28a7 7 0 0 0 0 9.44" />
+              <path d="M20.94 3.06a13 13 0 0 1 0 17.88" />
+              <path d="M3.06 3.06a13 13 0 0 0 0 17.88" />
+            </svg>
+          </div>
+          <h3 class="service-title">Livestreaming &amp; Event AV Setup</h3>
+          <p class="service-desc">Full-production livestreaming for sports tournaments, festivals, corporate events,
+            and church services &mdash; OBS Studio setup, multi-camera switching, graphics overlay and scoreboard
+            integration, audio mixing, and real-time on-site troubleshooting to keep your stream running without
+            interruption.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       WHY CHOOSE CAROLINATECH
+       ═══════════════════════════════════════════════════════ -->
+  <section id="why">
+    <!-- Blue glowing line at top -->
+    <div class="why-top-glow"></div>
+    <!-- Ambient glow -->
+    <div class="why-bg-glow"></div>
+
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Our Advantage</span>
+        <h2 class="section-title light">Why Choose CarolinaTech?</h2>
+        <p class="section-desc light">
+          We deliver reliable, professional, and customer-focused IT solutions for homes and businesses. From computer
+          repair to network infrastructure and CCTV installation, our goal is to provide dependable technology services
+          with quality workmanship and exceptional support.
+        </p>
+      </div>
+
+      <div class="why-grid stagger">
+
+        <!-- 1 -->
+        <div class="why-card reveal">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3 class="why-title">Professional On-Site Service</h3>
+          <p class="why-desc">Our experienced technicians come directly to your home or business, providing convenient
+            and efficient IT solutions without the hassle of transporting your equipment.</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="why-card reveal">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3 class="why-title">Skilled IT Professionals</h3>
+          <p class="why-desc">We deliver expert services in computer repair, networking, CCTV installation, printer
+            support, and managed IT solutions using industry best practices.</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="why-card reveal">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <h3 class="why-title">Fast &amp; Reliable Support</h3>
+          <p class="why-desc">Technology problems shouldn't slow you down. We respond promptly and work efficiently to
+            minimize downtime and keep your systems running smoothly.</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="why-card reveal">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </div>
+          <h3 class="why-title">Home &amp; Business Solutions</h3>
+          <p class="why-desc">Whether you're a homeowner, small business, or growing organization, we provide tailored
+            technology solutions designed to meet your specific needs.</p>
+        </div>
+
+        <!-- 6 -->
+        <div class="why-card reveal">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </div>
+          <h3 class="why-title">Customer-First Approach</h3>
+          <p class="why-desc">We believe in honest communication, dependable service, and building long-term
+            relationships through professionalism, transparency, and customer satisfaction.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ABOUT / CONTACT — SPLIT LAYOUT
+       ═══════════════════════════════════════════════════════ -->
+  <section id="about">
+    <div id="about-anchor" style="position:absolute;margin-top:-80px;"></div>
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- LEFT: About content -->
+        <div class="reveal-left">
+          <span class="about-eyebrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+            About CarolinaTech
+          </span>
+          <h2 class="about-title">Your Trusted On-Site IT Partner</h2>
+          <p class="about-desc">
+            CarolinaTech is a dedicated IT solutions provider committed to delivering reliable,
+            high-quality technology services directly to your home or business. Led by an experienced
+            IT professional with a strong background in government-level technical support and
+            TESDA NC II certification, we bring enterprise-grade, on-site expertise right to your doorstep.
+          </p>
+          <p class="about-desc">
+            Our mission is simple: solve your technology problems efficiently, transparently,
+            and with the professionalism you deserve. Whether it's advanced network troubleshooting,
+            CCTV installation, systems administration, or a simple laptop repair, we come to you,
+            treating every project with equal care and precision.
+          </p>
+
+          <!-- Who we serve -->
+          <div class="about-icon-grid">
+            <div class="about-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Homes
+            </div>
+            <div class="about-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <path d="M9 22V12h6v10" />
+                <rect x="3" y="3" width="18" height="6" rx="1" />
+              </svg>
+              Businesses
+            </div>
+            <div class="about-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+              Offices
+            </div>
+            <div class="about-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              </svg>
+              Schools
+            </div>
+            <div class="about-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+              Commercial
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Contact form card -->
+        <div class="reveal-right">
+          <div class="contact-card">
+            <h3 class="contact-card-title">Send Us a Request</h3>
+            <p class="contact-card-sub">We'll get back to you within 24 hours.</p>
+
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+              <!-- Web3Forms config (access_key injected via JS) -->
+              <input type="hidden" name="subject" value="New Inquiry from CarolinaTech Website">
+              <input type="hidden" name="from_name" value="CarolinaTech Website">
+              <input type="hidden" name="redirect" value="false">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="inputName">Full Name</label>
+                  <input class="form-input" type="text" id="inputName" name="name" placeholder="Juan dela Cruz"
+                    required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="inputEmail">Email Address</label>
+                  <input class="form-input" type="email" id="inputEmail" name="email" placeholder="you@email.com"
+                    required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inputPhone">Phone Number</label>
+                <input class="form-input" type="tel" id="inputPhone" name="phone" placeholder="+63 9XX XXX XXXX" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="selectService">Service Needed</label>
+                <select class="form-select" id="selectService" name="service">
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="computer-repair">Computer Repair, Hardware &amp; Software</option>
+                  <option value="laptop-repair">Laptop Repair</option>
+                  <option value="network-setup">Network Setup, Configuration &amp; Peripheral Devices</option>
+                  <option value="cctv">CCTV Installation</option>
+                  <option value="printer-repair">Printer Repair &amp; Maintenance</option>
+                  <option value="windows-software">Windows &amp; Software Installation</option>
+                  <option value="consulting">IT Consulting &amp; Systems Administration</option>
+                  <option value="livestreaming">Livestreaming &amp; Event AV Setup</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inputMessage">Message</label>
+                <textarea class="form-textarea" id="inputMessage" name="message" rows="4"
+                  placeholder="Describe your issue or project…"></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                Send Request
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CTA BANNER
+       ═══════════════════════════════════════════════════════ -->
+  <section id="cta-banner">
+    <div class="cta-banner-glow"></div>
+    <div class="container">
+      <div class="reveal">
+        <h2>Need Professional IT Support?</h2>
+        <p>Let's solve your technology problems today.</p>
+        <a href="#about" class="btn-cta-white">
+          Get Free Consultation
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand -->
+        <div>
+          <div class="footer-logo">
+            <span class="logo-dot"></span>
+            Carolina<span style="color:var(--blue)">Tech</span>
+          </div>
+          <p class="footer-brand-desc">
+            Professional IT solutions for homes, businesses, offices, and schools.
+            Reliable. Affordable. Expert.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about-anchor">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why">Why Choose Us</a></li>
+            <li><a href="#about">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Computer Repair, Hardware &amp; Software</a></li>
+            <li><a href="#services">Laptop Repair</a></li>
+            <li><a href="#services">Network Setup, Configuration &amp; Peripheral Devices</a></li>
+            <li><a href="#services">CCTV Installation</a></li>
+            <li><a href="#services">Printer Repair &amp; Maintenance</a></li>
+            <li><a href="#services">Windows &amp; Software Installation</a></li>
+            <li><a href="#services">IT Consulting &amp; Systems Administration</a></li>
+            <li><a href="#services">Livestreaming &amp; Event AV Setup</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div>
+          <h4 class="footer-col-title">Contact Information</h4>
+
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Brgy. Carolina, Naga City, Camarines Sur</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span>Mon – Sat: 8:00 AM – 6:00 PM</span>
+          </div>
+
+          <!-- Icon-only contact links in a horizontal row -->
+          <div class="footer-contact-icons">
+
+            <!-- Phone -->
+            <a href="tel:+639496437357" class="footer-icon-link" title="Call / SMS: 0949 643 7357">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.9 19.79 19.79 0 0 1 1.61 3.27 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l1.27-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </a>
+
+            <!-- Viber -->
+            <a href="viber://chat?number=%2B639496437357" class="footer-icon-link" title="Viber: 0949 643 7357">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#7360F2">
+                <path
+                  d="M11.917 0C5.878 0 1 4.656 1 10.394c0 3.185 1.518 6.11 4.003 8.103v3.96a.543.543 0 0 0 .918.39l2.927-2.927c.99.19 2.01.287 3.069.287 6.039 0 10.917-4.656 10.917-10.394C22.834 4.656 17.956 0 11.917 0zm5.713 15.107c-.383.413-.866.625-1.37.625-.154 0-.31-.02-.464-.062-1.564-.426-3.039-1.16-4.318-2.127a14.47 14.47 0 0 1-2.84-2.84c-.981-1.293-1.716-2.783-2.131-4.362-.253-.944.267-1.93 1.215-2.327.142-.06.292-.09.443-.09.476 0 .92.255 1.154.68l1.18 2.12c.23.414.19.93-.1 1.303l-.609.79c-.113.147-.128.35-.037.513.574 1.042 1.337 1.932 2.268 2.647.136.104.32.115.465.027l.838-.514c.353-.217.795-.243 1.172-.068l2.213 1.04c.516.243.79.82.67 1.369a1.62 1.62 0 0 1-.749 1.076z" />
+              </svg>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/639496437357" class="footer-icon-link" title="WhatsApp: 0949 643 7357"
+              target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#25D366">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+              </svg>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:jermaje@gmail.com" class="footer-icon-link" title="Email: jermaje@gmail.com">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/carolinatechnician" class="footer-icon-link"
+              title="Facebook: carolinatechnician" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+
+            <!-- Messenger -->
+            <a href="https://m.me/carolinatechnician" class="footer-icon-link" title="Messenger: carolinatechnician"
+              target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#0099FF">
+                <path
+                  d="M12 2C6.477 2 2 6.145 2 11.243c0 2.888 1.38 5.47 3.548 7.177V22l3.236-1.786A11.3 11.3 0 0 0 12 20.486c5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.05 12.444-2.543-2.715-4.965 2.715 5.465-5.8 2.604 2.715 4.904-2.715-5.465 5.8z" />
+              </svg>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom bar -->
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; <span id="footerYear"></span> CarolinaTech. All rights reserved.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CCTV PACKAGES MODAL
+       ═══════════════════════════════════════════════════════ -->
+  <div id="cctv-modal" class="cctv-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cctv-modal-title"
+    onclick="if(event.target===this)this.classList.remove('active')">
+    <div class="cctv-modal-panel">
+
+      <!-- Close button -->
+      <button class="cctv-modal-close" onclick="document.getElementById('cctv-modal').classList.remove('active')"
+        aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <!-- Header -->
+      <div class="cctv-modal-header">
+        <div class="cctv-modal-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m23 7-7 5 7 5V7z" />
+            <rect x="1" y="5" width="15" height="14" rx="2" />
+          </svg>
+        </div>
+        <div>
+          <h2 id="cctv-modal-title" class="cctv-modal-title">CCTV Installation Packages</h2>
+          <p class="cctv-modal-subtitle">Available packages for your home or business</p>
+        </div>
+      </div>
+
+      <!-- Packages -->
+      <div class="cctv-pkg-list">
+
+        <div class="cctv-pkg-card cctv-pkg-featured">
+          <div class="cctv-pkg-badge">Most Popular</div>
+          <div class="cctv-pkg-top">
+            <div class="cctv-pkg-cameras">4 Cameras</div>
+            <div class="cctv-pkg-price">₱18,999</div>
+          </div>
+          <div class="cctv-pkg-name">4 Camera 2MP Package</div>
+          <ul class="cctv-pkg-features">
+            <li>4 Camera 2MP (Bullet or Dome)</li>
+            <li>4 Channel DVR 2MP</li>
+            <li>500GB HDD</li>
+            <li>Free Installation</li>
+            <li>Mobile Remote Viewing</li>
+            <li>6 Months Warranty</li>
+            <li>Power Supply Included</li>
+          </ul>
+        </div>
+
+
+
+        <div class="cctv-pkg-card">
+          <div class="cctv-pkg-top">
+            <div class="cctv-pkg-cameras">8 Cameras</div>
+            <div class="cctv-pkg-price">₱32,000</div>
+          </div>
+          <div class="cctv-pkg-name">8 Camera Package</div>
+          <ul class="cctv-pkg-features">
+            <li>8 Camera System</li>
+            <li>DVR &amp; HDD Included</li>
+            <li>Free Installation</li>
+            <li>Mobile Remote Viewing</li>
+            <li>Warranty Included</li>
+          </ul>
+        </div>
+
+        <div class="cctv-pkg-card">
+          <div class="cctv-pkg-top">
+            <div class="cctv-pkg-cameras">16 Cameras</div>
+            <div class="cctv-pkg-price">₱55,000</div>
+          </div>
+          <div class="cctv-pkg-name">16 Camera Package</div>
+          <ul class="cctv-pkg-features">
+            <li>16 Camera System</li>
+            <li>DVR &amp; HDD Included</li>
+            <li>Free Installation</li>
+            <li>Mobile Remote Viewing</li>
+            <li>Warranty Included</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Disclaimer -->
+      <p class="cctv-modal-note">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+        <strong>Note:</strong> Prices shown are not fixed and are for inquiry purposes only. TV monitors are <strong>not
+          included</strong> in these packages.
+      </p>
+
+      <!-- CTA -->
+      <a href="#about" class="cctv-modal-cta"
+        onclick="document.getElementById('cctv-modal').classList.remove('active')">
+        Inquire Now
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+
+    </div>
+  </div>
+
+  <script>
+    // Set footer year
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    // Close CCTV modal on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        document.getElementById('cctv-modal').classList.remove('active');
+      }
+    });
+  </script>
+  <script src="assets/js/main.js" defer></script>
+
+</body>
+
+</html>

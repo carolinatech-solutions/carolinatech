@@ -1,0 +1,54 @@
+/* ============================================================
+   CAROLINATECH V2 — DESIGN TOKENS
+   ============================================================ */
+
+:root {
+  /* ── Core ───────────────────────────────────────────────── */
+  --black:         #0B0B0B;
+  --white:         #FFFFFF;
+
+  /* ── Accent Blues ───────────────────────────────────────── */
+  --blue:          #2563EB;
+  --blue-dark:     #1D4ED8;
+  --blue-dim:      rgba(37, 99, 235, 0.12);
+  --blue-glow:     rgba(37, 99, 235, 0.35);
+
+  /* ── Neutrals ───────────────────────────────────────────── */
+  --gray-light:    #F8FAFC;
+  --gray-border:   #E5E7EB;
+  --gray-text:     #64748B;
+  --gray-mid:      #94A3B8;
+
+  /* ── Dark Section ───────────────────────────────────────── */
+  --dark-surface:  #111827;
+  --dark-card:     #1F2937;
+  --dark-border:   rgba(255,255,255,0.08);
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font:          'Inter', system-ui, sans-serif;
+
+  /* ── Shadows ─────────────────────────────────────────────── */
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:     0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-lg:     0 10px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-blue:   0 8px 32px rgba(37, 99, 235, 0.25);
+  --shadow-card:   0 2px 16px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04);
+
+  /* ── Spacing ─────────────────────────────────────────────── */
+  --section-pad:   clamp(3rem, 6vw, 5rem);
+  --container:     1200px;
+
+  /* ── Radius ──────────────────────────────────────────────── */
+  --r-sm:   8px;
+  --r-md:   16px;
+  --r-lg:   20px;
+  --r-xl:   28px;
+  --r-full: 9999px;
+
+  /* ── Transitions ─────────────────────────────────────────── */
+  --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:   cubic-bezier(0, 0, 0.2, 1);
+  --t-fast:     150ms;
+  --t-base:     250ms;
+  --t-slow:     400ms;
+}

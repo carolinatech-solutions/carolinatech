@@ -1,0 +1,109 @@
+/* ==========================================================================
+   LAYOUT STRUCTURE (NAVBAR, FOOTER, DEFAULT SECTIONS)
+   ========================================================================== */
+
+/* NAV */
+nav { 
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100; 
+  display: flex; align-items: center; justify-content: space-between; 
+  padding: 20px 48px; border-bottom: 1px solid var(--border); 
+  background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(18px); 
+  transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; 
+}
+nav.scrolled { 
+  padding: 14px 48px; 
+  background: rgba(255, 255, 255, 0.9); 
+  box-shadow: var(--shadow-sm); 
+}
+
+body.dark-mode nav {
+  background: rgba(10, 14, 20, 0.85);
+}
+body.dark-mode nav.scrolled {
+  background: rgba(10, 14, 20, 0.9);
+}
+
+/* SECTION */
+section { 
+  padding: 100px 48px; 
+  position: relative; 
+}
+
+/* FOOTER */
+footer { 
+  background: var(--surface); 
+  border-top: 1px solid var(--border); 
+  padding: 36px 48px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  gap: 16px; 
+}
+.footer-logo { 
+  font-family: var(--font-head); 
+  font-weight: 800; 
+  font-size: 18px; 
+  color: var(--text); 
+}
+.footer-logo .ct { 
+  color: var(--accent); 
+}
+.footer-copy { 
+  font-size: 12px; 
+  color: var(--muted); 
+}
+.footer-links { 
+  display: flex; 
+  gap: 24px; 
+}
+.footer-links a { 
+  font-size: 12px; 
+  color: var(--muted); 
+  text-decoration: none; 
+  font-weight: 500; 
+  transition: color 0.2s; 
+}
+.footer-links a:hover { 
+  color: var(--accent); 
+}
+
+
+/* Custom SVG Icon Alignment inside Layout elements */
+.why-icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+}
+.cred-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+}
+.ac-title svg,
+.est-section-note svg,
+.est-disclaimer svg,
+.map-note svg,
+.md-label svg,
+.order-badge svg {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 6px;
+  color: var(--accent);
+}
+.order-badge svg {
+  color: #b45309;
+}
+.est-section-note svg {
+  color: var(--accent);
+}
+.est-disclaimer svg {
+  color: var(--muted);
+}
+.info-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+}
