@@ -31,11 +31,11 @@
 /* Sticky + glassy after scroll */
 #navbar.sticky {
   padding: 0.875rem 0;
-  background: rgba(11, 11, 11, 0.85);
+  background: rgba(13, 27, 46, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(26, 110, 235, 0.12);
+  box-shadow: 0 4px 30px rgba(13, 27, 46, 0.6);
 }
 
 .nav-logo {
@@ -96,7 +96,7 @@
 #hero {
   position: relative;
   min-height: 100vh;
-  background: var(--black);
+  background: var(--navy);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -139,7 +139,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, var(--black) 0%, rgba(11, 11, 11, 0.5) 40%, rgba(11, 11, 11, 0.2) 100%);
+  background: linear-gradient(90deg, var(--navy) 0%, rgba(13, 27, 46, 0.55) 40%, rgba(13, 27, 46, 0.15) 100%);
   z-index: 1;
 }
 
@@ -147,7 +147,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11, 11, 11, 0.3) 0%, rgba(11, 11, 11, 0.4) 100%);
+  background: linear-gradient(180deg, rgba(13, 27, 46, 0.3) 0%, rgba(13, 27, 46, 0.4) 100%);
   z-index: 2;
   mix-blend-mode: multiply;
 }
@@ -159,7 +159,7 @@
   right: 0;
   width: 60%;
   height: 60%;
-  background: radial-gradient(ellipse at 70% 80%, rgba(37, 99, 235, 0.25) 0%, transparent 65%);
+  background: radial-gradient(ellipse at 70% 80%, rgba(26, 110, 235, 0.30) 0%, transparent 65%);
   z-index: 3;
   pointer-events: none;
 }
@@ -187,9 +187,9 @@
   gap: 0.5rem;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-  background: rgba(37, 99, 235, 0.15);
-  border: 1px solid rgba(37, 99, 235, 0.35);
+  color: rgba(255, 255, 255, 0.90);
+  background: rgba(26, 110, 235, 0.15);
+  border: 1px solid rgba(26, 110, 235, 0.40);
   padding: 0.4rem 1rem;
   border-radius: var(--r-full);
   margin-bottom: 1.75rem;
@@ -241,9 +241,9 @@
    STATS BAR
    ────────────────────────────────────────────────────────── */
 #stats {
-  background: var(--white);
-  border-top: 1px solid var(--gray-border);
-  border-bottom: 1px solid var(--gray-border);
+  background: var(--navy-mid);
+  border-top: 1px solid rgba(26, 110, 235, 0.15);
+  border-bottom: 1px solid rgba(26, 110, 235, 0.15);
   padding: 0;
 }
 
@@ -255,7 +255,7 @@
 .stat-item {
   text-align: center;
   padding: 2.25rem 1.5rem;
-  border-right: 1px solid var(--gray-border);
+  border-right: 1px solid rgba(26, 110, 235, 0.15);
   position: relative;
   transition: all var(--t-base) var(--ease);
 }
@@ -265,7 +265,7 @@
 }
 
 .stat-item:hover {
-  background: var(--gray-light);
+  background: rgba(26, 110, 235, 0.07);
 }
 
 .stat-num {
@@ -289,7 +289,7 @@
 .stat-label-text {
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--gray-text);
+  color: var(--gray-mid);
   letter-spacing: 0.02em;
 }
 
@@ -297,7 +297,7 @@
    SERVICES SECTION
    ────────────────────────────────────────────────────────── */
 #services {
-  background: var(--white);
+  background: var(--gray-light);
   padding: var(--section-pad) 0;
 }
 
@@ -311,7 +311,7 @@
    WHY CHOOSE US
    ────────────────────────────────────────────────────────── */
 #why {
-  background: var(--black);
+  background: var(--navy);
   padding: var(--section-pad) 0;
   position: relative;
   overflow: hidden;
@@ -325,7 +325,7 @@
   width: 60%;
   height: 3px;
   background: linear-gradient(90deg, transparent, var(--blue), transparent);
-  box-shadow: 0 0 30px rgba(37, 99, 235, 0.8), 0 0 60px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 0 30px rgba(26, 110, 235, 0.80), 0 0 60px rgba(26, 110, 235, 0.40);
 }
 
 .why-bg-glow {
@@ -333,9 +333,9 @@
   top: -100px;
   left: 50%;
   transform: translateX(-50%);
-  width: 600px;
-  height: 400px;
-  background: radial-gradient(ellipse, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(26, 110, 235, 0.10) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -349,7 +349,7 @@
    ABOUT / CONTACT
    ────────────────────────────────────────────────────────── */
 #about {
-  background: var(--gray-light);
+  background: var(--navy-mid);
   padding: var(--section-pad) 0;
 }
 
@@ -375,7 +375,7 @@
 .about-title {
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 800;
-  color: var(--black);
+  color: var(--white);
   letter-spacing: -0.025em;
   line-height: 1.2;
   margin-bottom: 1.25rem;
@@ -383,7 +383,7 @@
 
 .about-desc {
   font-size: 1rem;
-  color: var(--gray-text);
+  color: var(--gray-mid);
   line-height: 1.8;
   margin-bottom: 0.75rem;
 }
@@ -392,7 +392,7 @@
    CTA BANNER
    ────────────────────────────────────────────────────────── */
 #cta-banner {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1D4ED8 40%, #2563EB 100%);
+  background: linear-gradient(135deg, #091829 0%, #0F2340 30%, #1A6EEB 100%);
   padding: clamp(4rem, 8vw, 6rem) 0;
   text-align: center;
   position: relative;
@@ -451,9 +451,9 @@
    FOOTER
    ────────────────────────────────────────────────────────── */
 #footer {
-  background: #060606;
+  background: #060F1E;
   padding: 5rem 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(26, 110, 235, 0.15);
 }
 
 .footer-grid {

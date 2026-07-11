@@ -60,7 +60,7 @@
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(37, 99, 235, ${opacity})`;
+      ctx.fillStyle = `rgba(26, 110, 235, ${opacity})`;
       ctx.fill();
 
       // draw connecting lines
@@ -73,7 +73,7 @@
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `rgba(37, 99, 235, ${opacity * 0.25 * (1 - dist / 120)})`;
+          ctx.strokeStyle = `rgba(26, 110, 235, ${opacity * 0.25 * (1 - dist / 120)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -266,7 +266,7 @@
                  style="animation:spin 0.8s linear infinite;">
                  <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
                </svg> Sending…`,
-        bg: 'rgba(255,255,255,0.7)', color: '#1D4ED8', disabled: true,
+        bg: 'rgba(255,255,255,0.7)', color: '#1558CC', disabled: true,
       },
       success: {
         html: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
