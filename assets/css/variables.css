@@ -1,44 +1,46 @@
 /* ============================================================
-   CAROLINATECH V2 — DESIGN TOKENS (Custom Color Combination)
+   CAROLINATECH V2 — DESIGN TOKENS (Logo-Aligned Theme)
+   Logo: Deep Navy "C" + Electric Blue "T"
    ============================================================ */
 
 :root {
-  /* ── Core brand colors ──────────────────────────────────── */
-  --navy:          #011031;   /* Base Dark Background */
-  --navy-mid:      #021b4a;   /* Cards / Secondary surfaces */
-  --navy-light:    #032b6e;   /* Intermediary borders / Hover states */
+  /* ── Logo Core Colors ───────────────────────────────────── */
+  /* Deep navy from the "C" letterform */
+  --navy:          #0D1B2E;
+  --navy-mid:      #0F2340;
+  --navy-light:    #162944;
 
-  /* Legacy alias / White */
-  --black:         #011031;
-  --white:         #fffffe;   /* Off-white text */
+  /* Legacy alias — keeps existing code working */
+  --black:         #0D1B2E;
+  --white:         #FFFFFF;
 
-  /* ── Electric Blue Accent ────────────────────────────────── */
-  --blue:          #013ded;
-  --blue-dark:     #0133c4;
-  --blue-dim:      rgba(1, 61, 237, 0.12);
-  --blue-glow:     rgba(1, 61, 237, 0.35);
+  /* ── Electric Blue (the "T" letterform) ─────────────────── */
+  --blue:          #1A6EEB;
+  --blue-dark:     #1558CC;
+  --blue-dim:      rgba(26, 110, 235, 0.12);
+  --blue-glow:     rgba(26, 110, 235, 0.35);
 
   /* ── Neutrals ───────────────────────────────────────────── */
-  --gray-light:    #02153b;
-  --gray-border:   #04266e;
-  --gray-text:     #8f9fc2;
-  --gray-mid:      #b0c2e6;
+  --gray-light:    #F0F4F8;
+  --gray-border:   #D9E2EC;
+  --gray-text:     #5A6B82;
+  --gray-mid:      #8FA3B8;
 
   /* ── Dark Section Surfaces ──────────────────────────────── */
-  --dark-surface:  #011031;
-  --dark-card:     #021b4a;
-  --dark-border:   rgba(1, 61, 237, 0.12);
+  --dark-surface:  #0D1B2E;   /* Navy — matches logo "C" */
+  --dark-card:     #0F2340;   /* Slightly lighter for cards */
+  --dark-border:   rgba(255, 255, 255, 0.08);
 
   /* ── Typography ─────────────────────────────────────────── */
   --font:          'Inter', system-ui, sans-serif;
 
   /* ── Shadows ─────────────────────────────────────────────── */
-  --shadow-sm:     0 1px 3px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.10);
-  --shadow-md:     0 4px 20px rgba(0,0,0,0.20), 0 1px 4px rgba(0,0,0,0.10);
-  --shadow-lg:     0 10px 40px rgba(0,0,0,0.30), 0 2px 8px rgba(0,0,0,0.15);
-  --shadow-blue:   0 8px 32px rgba(1, 61, 237, 0.30);
-  --shadow-navy:   0 8px 24px rgba(1, 16, 49, 0.60);
-  --shadow-card:   0 2px 16px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.10);
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:     0 4px 20px rgba(0,0,0,0.14), 0 1px 4px rgba(0,0,0,0.06);
+  --shadow-lg:     0 10px 40px rgba(0,0,0,0.20), 0 2px 8px rgba(0,0,0,0.10);
+  --shadow-blue:   0 8px 32px rgba(26, 110, 235, 0.30);
+  --shadow-navy:   0 8px 24px rgba(13, 27, 46, 0.60);
+  --shadow-card:   0 2px 16px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
 
   /* ── Spacing ─────────────────────────────────────────────── */
   --section-pad:   clamp(3rem, 6vw, 5rem);
