@@ -16,10 +16,15 @@
   <meta property="og:description"
     content="Professional IT services including computer repair, networking, CCTV installation, and business technology solutions." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://carolinatech.ph/" />
+  <meta property="og:image" content="https://carolinatech.ph/assets/images/slide1.png" />
 
-  <!-- Favicon placeholder -->
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563EB'/><text y='22' x='7' font-family='Inter,sans-serif' font-weight='800' font-size='18' fill='white'>C</text></svg>" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://carolinatech.ph/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/images/favicon.png" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -86,6 +91,8 @@
         alt="IT technician repairing a desktop computer with blue lighting" loading="eager" />
       <img src="assets/images/slide2.jpg" class="hero-slide" alt="IT professional providing on-site support"
         loading="lazy" />
+      <img src="assets/images/slide3.png" class="hero-slide"
+        alt="CarolinaTech technician setting up professional networking equipment" loading="lazy" />
       <div class="hero-blue-glow"></div>
     </div>
 
@@ -319,9 +326,8 @@
 
         <!-- 4. CCTV Installation -->
         <div class="service-card service-card--cctv reveal" id="cctv-card"
-          onclick="document.getElementById('cctv-modal').classList.add('active')" role="button" tabindex="0"
-          aria-label="CCTV Installation – click to view packages"
-          onkeydown="if(event.key==='Enter')document.getElementById('cctv-modal').classList.add('active')">
+          role="button" tabindex="0"
+          aria-label="CCTV Installation – click to view packages">
           <div class="svc-bg" style="background-image: url('assets/images/svc_cctv.png')"></div>
           <div class="service-card-pkg-note">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
@@ -499,7 +505,7 @@
             technology solutions designed to meet your specific needs.</p>
         </div>
 
-        <!-- 6 -->
+        <!-- 5 -->
         <div class="why-card reveal">
           <div class="why-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -832,7 +838,7 @@
     <div class="cctv-modal-panel">
 
       <!-- Close button -->
-      <button class="cctv-modal-close" onclick="document.getElementById('cctv-modal').classList.remove('active')"
+      <button class="cctv-modal-close" id="cctv-modal-close"
         aria-label="Close">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -924,8 +930,7 @@
       </p>
 
       <!-- CTA -->
-      <a href="#about" class="cctv-modal-cta"
-        onclick="document.getElementById('cctv-modal').classList.remove('active')">
+      <a href="#about" class="cctv-modal-cta" id="cctv-modal-cta">
         Inquire Now
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -939,13 +944,6 @@
   <script>
     // Set footer year
     document.getElementById('footerYear').textContent = new Date().getFullYear();
-
-    // Close CCTV modal on Escape key
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        document.getElementById('cctv-modal').classList.remove('active');
-      }
-    });
   </script>
   <script src="assets/js/main.js" defer></script>
 

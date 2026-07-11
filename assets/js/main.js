@@ -166,49 +166,6 @@
   }
 })();
 
-/* ─────────────────────────────────────────────────────────
-   3. ANIMATED COUNTERS
-   ───────────────────────────────────────────────────────── */
-(function initCounters() {
-  const counters = document.querySelectorAll('[data-count]');
-  if (!counters.length) return;
-
-  let started = false;
-
-  function easeOut(t) {
-    return 1 - Math.pow(1 - t, 3);
-  }
-
-  function animateCounter(el) {
-    const target   = parseInt(el.dataset.count, 10);
-    const duration = 2000;
-    const start    = performance.now();
-
-    function step(now) {
-      const elapsed  = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const value    = Math.round(easeOut(progress) * target);
-      el.textContent = value.toLocaleString();
-      if (progress < 1) requestAnimationFrame(step);
-    }
-
-    requestAnimationFrame(step);
-  }
-
-  const observer = new IntersectionObserver(entries => {
-    if (started) return;
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        started = true;
-        counters.forEach(c => animateCounter(c));
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-
-  const statsSection = document.getElementById('stats');
-  if (statsSection) observer.observe(statsSection);
-})();
 
 /* ─────────────────────────────────────────────────────────
    4. SCROLL REVEAL
@@ -438,15 +395,63 @@
 })();
 
 /* ─────────────────────────────────────────────────────────
+   10. CCTV MODAL
+   ───────────────────────────────────────────────────────── */
+(function initCctvModal() {
+  const modal    = document.getElementById('cctv-modal');
+  const card     = document.getElementById('cctv-card');
+  const closeBtn = document.getElementById('cctv-modal-close');
+  const ctaBtn   = document.getElementById('cctv-modal-cta');
+  if (!modal) return;
+
+  function openModal() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Open via service card click or Enter key
+  if (card) {
+    card.addEventListener('click', openModal);
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal();
+      }
+    });
+  }
+
+  // Close via X button
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  // Close via Inquire Now (scrolls to contact, closes modal)
+  if (ctaBtn) ctaBtn.addEventListener('click', closeModal);
+
+  // Close on overlay click
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  });
+})();
+
+/* ─────────────────────────────────────────────────────────
    10. HERO SLIDESHOW
    ───────────────────────────────────────────────────────── */
 (function initHeroSlideshow() {
   const container = document.getElementById('heroSlideshow');
   if (!container) return;
 
-  // Start with slides already in HTML
+  // Start with slides already in HTML (slide1, slide2, slide3)
   const loadedSlides = Array.from(container.querySelectorAll('.hero-slide'));
-  let slideIndex = loadedSlides.length + 1; // start probing for slide3
+  let slideIndex = loadedSlides.length + 1; // start probing for slide4+
 
   function probeNextSlide() {
     const exts = ['.jpg', '.png', '.jpeg'];
