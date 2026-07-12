@@ -84,40 +84,48 @@ function minifyAndObfuscateJS(js) {
   return protectionScript + '\n' + cleanedJS;
 }
 
-// Obfuscate HTML by turning the whole code into a Base64-decoded document.write
+// Obfuscate HTML by turning the body contents into a Base64-decoded DOM injection
 function obfuscateHTML(html) {
-  // Compress HTML slightly
-  const cleanHTML = html
+  // Extract head contents to preserve SEO metadata and linked CSS
+  const headMatch = html.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
+  const headContent = headMatch ? headMatch[1].trim() : '';
+
+  // Extract body contents
+  const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  let bodyContent = bodyMatch ? bodyMatch[1] : html;
+
+  // Remove the script tags from bodyContent so they aren't parsed inside innerHTML
+  bodyContent = bodyContent.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+
+  // Compress body HTML slightly
+  const cleanBody = bodyContent
     .replace(/<!--[\s\S]*?-->/g, '') // Remove comments
     .replace(/\s+/g, ' ')            // Collapse whitespace
     .trim();
 
-  const b64 = base64Encode(cleanHTML);
+  const b64 = base64Encode(cleanBody);
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CarolinaTech | Professional IT Solutions</title>
-  <meta name="description" content="CarolinaTech delivers trusted computer repair, networking, CCTV installation, printer repair, and complete IT solutions for homes and businesses.">
-  <style>
-    body { background: #0B1F3A; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; height: 100vh; font-family: system-ui, sans-serif; color: #fff; overflow: hidden; }
-    .spinner { border: 4px solid rgba(255,255,255,0.1); width: 36px; height: 36px; border-radius: 50%; border-left-color: #1B4FD8; animation: spin 1s linear infinite; }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-  </style>
+  ${headContent}
 </head>
 <body>
-  <div class="spinner"></div>
+  <div id="app"></div>
   <script>
     (function() {
-      // Decode and render the full webpage securely
+      // Securely decode and render page layout dynamically
       var payload = "${b64}";
-      document.open();
-      document.write(atob(payload));
-      document.close();
+      document.getElementById('app').innerHTML = atob(payload);
+      
+      // Set footer year
+      var footerYearEl = document.getElementById('footerYear');
+      if (footerYearEl) {
+        footerYearEl.textContent = new Date().getFullYear();
+      }
     })();
   </script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>`;
 }
