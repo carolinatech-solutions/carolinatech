@@ -58,30 +58,7 @@ function minifyAndObfuscateJS(js) {
 })();
 `;
 
-  // Combine minification (basic regex cleanup)
-  let cleanedJS = js
-    .replace(/\/\*[\s\S]*?\*\//g, '') // remove multi-line comments
-    .replace(/\/\/.*$/gm, '')         // remove single-line comments
-    .replace(/\s+/g, ' ')             // collapse multiple whitespaces
-    .trim();
-
-  // Simple string-to-hex obfuscation helper
-  // Converts string literals to hex equivalents to make text searches harder
-  cleanedJS = cleanedJS.replace(/(["'])(.*?)\1/g, (match, quote, content) => {
-    // Skip empty strings or very short strings
-    if (content.length < 2) return match;
-    // Skip strings that look like regexes, colors, or SVGs
-    if (content.includes('<svg') || content.includes('d=') || content.startsWith('#')) return match;
-    
-    let obfuscated = '';
-    for (let i = 0; i < content.length; i++) {
-      const hex = content.charCodeAt(i).toString(16);
-      obfuscated += '\\x' + (hex.length < 2 ? '0' + hex : hex);
-    }
-    return quote + obfuscated + quote;
-  });
-
-  return protectionScript + '\n' + cleanedJS;
+  return protectionScript + '\n' + js;
 }
 
 // Obfuscate HTML by turning the body contents into a Base64-decoded DOM injection
@@ -114,14 +91,18 @@ function obfuscateHTML(html) {
   <div id="app"></div>
   <script>
     (function() {
-      // Securely decode and render page layout dynamically
-      var payload = "${b64}";
-      document.getElementById('app').innerHTML = atob(payload);
-      
-      // Set footer year
-      var footerYearEl = document.getElementById('footerYear');
-      if (footerYearEl) {
-        footerYearEl.textContent = new Date().getFullYear();
+      // Securely decode and render page layout dynamically as UTF-8
+      try {
+        var payload = "${b64}";
+        document.getElementById('app').innerHTML = decodeURIComponent(escape(atob(payload)));
+        
+        // Set footer year
+        var footerYearEl = document.getElementById('footerYear');
+        if (footerYearEl) {
+          footerYearEl.textContent = new Date().getFullYear();
+        }
+      } catch (e) {
+        console.error("Decryption failed:", e);
       }
     })();
   </script>
