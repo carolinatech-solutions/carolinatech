@@ -1645,12 +1645,15 @@ footer {
 }
 
 #navbar.transparent {
-  background: transparent;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: var(--blur-sm);
+  -webkit-backdrop-filter: var(--blur-sm);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #navbar.sticky {
   padding: 0.875rem 0;
-  background: rgba(11, 31, 58, 0.72);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: var(--blur-lg);
   -webkit-backdrop-filter: var(--blur-lg);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
