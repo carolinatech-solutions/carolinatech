@@ -22,27 +22,27 @@ A premium, modern, and high-performance landing page for CarolinaTech, providing
 
 ## 📂 Project Structure
 
-- `index.html` - The main HTML document containing all layout sections (Hero, Services, Why Us, About/Contact, Footer, and CCTV Modal).
-- `assets/` - Directory containing all static assets:
-  - `css/` - Modular styling architecture:
-    - `style.css` - Main entry hub importing all stylesheets.
-    - `variables.css` - CSS Custom Properties (colors, spacing, easing).
-    - `reset.css` - Base resets, smooth scrolling, and base typography.
-    - `animations.css` - Global animation `@keyframes`.
-    - `components.css` - Reusable UI elements (buttons, cards, inputs, modales, hamburger, contact bubble).
-    - `sections.css` - Layout specific styling for page sections (Hero, Services, Why Us, etc.).
-    - `responsive.css` - Media queries for tablet and mobile adaptations.
-  - `js/`
-    - `main.js` - Application logic organized in modular IIFEs (Particle Canvas, Navbar states, Animated Counters, Scroll Reveal, Form Submission, Smooth Scrolling, Contact Bubble).
-  - `images/` - Image assets including hero backgrounds.
+- `index.html` - **[Obfuscated/Encrypted Production Build]** The entry file served to users. It contains a dynamic loader that decrypts the page content on load and blocks F12/Inspect element shortcuts.
+- `assets/` - **[Obfuscated/Production Bundles]**
+  - `css/style.css` - Minified and consolidated CSS styles.
+  - `js/main.js` - Minified, obfuscated, and protected script bundle containing form controls, sliders, navigation logic, and security features.
+- `src/` - **[Raw Editable Source Code]** 👈 **Edit your code here!**
+  - `index.html` - Raw, fully readable and structured HTML source.
+  - `assets/css/style.css` - Raw stylesheet with custom variables, layout rules, and components.
+  - `assets/js/main.js` - Raw scripts including form integrations, particle canvas, etc.
+- `build.js` - Node.js compilation script that compiles the source code from `src/` into the production root.
 
-## 💻 Getting Started
+## 💻 Development & Build Process
 
-This is a static website, so no complex build tools, dependencies, or servers are required to run it locally.
+This project features a build pipeline to compress the codebase and protect your intellectual property (disabling right-click, F12 inspector, View Source shortcut, and obfuscating the HTML markup).
 
-1. Clone or download the repository.
-2. Open the `index.html` file directly in any modern web browser.
-3. *Optional*: For the best development experience, open the folder in VS Code and use the **Live Server** extension to preview changes in real-time.
+### How to Edit and Update the Website:
+1. Always make your changes inside the **`src/`** folder (e.g., edit `src/index.html` or `src/assets/js/main.js`).
+2. Run the build script in your terminal to compile and encrypt the changes into the production root:
+   ```bash
+   node build.js
+   ```
+3. The build script will minify the CSS, obfuscate JavaScript string literals, inject security protection layers, base64-encrypt the HTML layout, and output the optimized files to the root directory.
 
 ## 📝 Configuration (Web3Forms)
 
@@ -51,13 +51,13 @@ The contact form is configured to send emails using Web3Forms. The access key is
 To change the email destination, you need to update the Web3Forms access key:
 
 1. Visit [web3forms.com](https://web3forms.com/) and enter your email address to get a free Access Key.
-2. Open `assets/js/main.js` and locate the `initForm` function.
+2. Open `src/assets/js/main.js` and locate the `initForm` function.
 3. Find the `_k` array where the key is split into parts (to avoid scraper bots finding it easily):
    ```javascript
    // Change these string pieces to match your new access key separated by dashes
    const _k = ['your', 'new', 'access', 'key', 'here'];
    ```
-4. Save the file. The form will now send submissions to your registered email address.
+4. Run `node build.js` in the terminal to compile your new configuration.
 
 ## 📄 License
 
