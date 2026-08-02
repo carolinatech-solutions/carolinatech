@@ -101,6 +101,37 @@ function obfuscateHTML(html) {
         if (footerYearEl) {
           footerYearEl.textContent = new Date().getFullYear();
         }
+
+        // Service card modal
+        document.addEventListener('click', function(e) {
+          var card = e.target.closest('.service-card--clickable');
+          if (!card) return;
+          var id = card.getAttribute('data-svc-id');
+          if (!id) return;
+          var dataEl = document.getElementById('svcData' + id);
+          if (!dataEl) return;
+          var modal = document.getElementById('svc-modal');
+          var titleEl = document.getElementById('svcModalTitle');
+          var bodyEl = document.getElementById('svcModalBody');
+          titleEl.textContent = dataEl.getAttribute('data-title');
+          bodyEl.innerHTML = dataEl.innerHTML;
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+        document.addEventListener('click', function(e) {
+          if (e.target.classList && e.target.classList.contains('svc-modal-overlay')) {
+            e.target.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+          if (e.target.closest && e.target.closest('.svc-modal-close')) {
+            var overlay = e.target.closest('.svc-modal-overlay');
+            if (overlay) { overlay.classList.remove('active'); document.body.style.overflow = ''; }
+          }
+          if (e.target.closest && e.target.closest('.btn-svc-modal-cta')) {
+            var overlay = e.target.closest('.svc-modal-overlay');
+            if (overlay) { overlay.classList.remove('active'); document.body.style.overflow = ''; }
+          }
+        });
       } catch (e) {
         console.error("Decryption failed:", e);
       }
