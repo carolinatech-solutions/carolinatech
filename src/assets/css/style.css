@@ -627,6 +627,7 @@ footer {
   transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1);
   border-radius: inherit;
   z-index: 0;
+  pointer-events: none;
 }
 
 .service-card::before {
@@ -643,6 +644,7 @@ footer {
   transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1);
   border-radius: inherit;
   z-index: 1;
+  pointer-events: none;
 }
 
 .service-card:hover {
@@ -2446,4 +2448,71 @@ footer {
     width: 34px;
     height: 34px;
   }
+}
+
+/* ============================================================
+   Service List Custom Bullets
+   ============================================================ */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9375rem;
+  color: var(--gray-text);
+  line-height: 1.5;
+}
+
+.service-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--blue);
+  box-shadow: 0 0 8px var(--blue-glow);
+}
+
+
+
+/* ═══ Service Toggle (View Details) ═══ */
+.svc-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.service-list {
+  position: relative;
+  z-index: 2;
+}
+
+.svc-toggle:hover {
+  opacity: 0.75;
+}
+
+.svc-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.svc-toggle.open svg {
+  transform: rotate(180deg);
 }

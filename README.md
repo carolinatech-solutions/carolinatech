@@ -36,13 +36,28 @@ A premium, modern, and high-performance landing page for CarolinaTech, providing
 
 This project features a build pipeline to compress the codebase and protect your intellectual property (disabling right-click, F12 inspector, View Source shortcut, and obfuscating the HTML markup).
 
+### Prerequisites
+- You must have **[Node.js](https://nodejs.org/)** installed on your computer to run the build script.
+
 ### How to Edit and Update the Website:
-1. Always make your changes inside the **`src/`** folder (e.g., edit `src/index.html` or `src/assets/js/main.js`).
-2. Run the build script in your terminal to compile and encrypt the changes into the production root:
+1. **Never edit the files in the root folder** (`index.html`, `assets/css/style.css`, etc.) directly. These are generated files and your changes will be overwritten.
+2. **Always make your changes inside the `src/` folder** (e.g., edit `src/index.html` or `src/assets/js/main.js`).
+3. Open your terminal (or Command Prompt / PowerShell) in the project folder.
+4. Run the build script to compile and encrypt the changes into the production root:
    ```bash
    node build.js
    ```
-3. The build script will minify the CSS, obfuscate JavaScript string literals, inject security protection layers, base64-encrypt the HTML layout, and output the optimized files to the root directory.
+5. The build script will minify the CSS, obfuscate JavaScript string literals, inject security protection layers, base64-encrypt the HTML layout, and output the optimized files to the root directory. You can now upload the root files to your web server.
+
+### Updating Contact Links & Social Media (Base64)
+To prevent bots from scraping your contact information, URLs and phone numbers in `src/index.html` are obfuscated using Base64 encoding.
+
+If you need to change a phone number or a Facebook link (look for `data-obf-href`, `data-obf-text`, or `data-obf-title`), you must encode the new text into Base64 first:
+1. Go to a free Base64 encoder like [Base64Encode.org](https://www.base64encode.org/).
+2. Type your link (e.g., `https://wa.me/639496437357`) or text (e.g., `0949 643 7357`) into the top box.
+3. Click "Encode" and copy the resulting string (e.g., `aHR0cHM6Ly93YS5tZS82Mzk0OTY0MzczNTc=`).
+4. Paste that string into the corresponding `data-obf-*` attribute in `src/index.html`.
+5. Run `node build.js`.
 
 ## 📝 Configuration (Web3Forms)
 
