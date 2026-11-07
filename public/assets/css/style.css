@@ -160,7 +160,7 @@ svg {
   color: var(--muted);
   font-size: 0.93rem;
   font-weight: 600;
-  transition: color 160ms ease;
+  transition: color 220ms ease;
 }
 
 .nav-links a:hover,
@@ -182,14 +182,18 @@ svg {
   font-weight: 700;
   line-height: 1.2;
   transition:
-    background 160ms ease,
-    border-color 160ms ease,
-    box-shadow 160ms ease,
-    transform 160ms ease;
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .button:hover {
   transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .button-primary {
@@ -285,7 +289,7 @@ p {
 h1 {
   margin-bottom: 1.25rem;
   margin-top: 1.45rem;
-  font-size: clamp(2.7rem, 5vw, 4.25rem);
+  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 1.06;
@@ -325,7 +329,7 @@ h1 span {
 .hero-visual {
   position: relative;
   min-width: 0;
-  aspect-ratio: 1.12 / 1;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border: 1px solid #dce4ec;
   border-radius: 1rem;
@@ -346,6 +350,21 @@ h1 span {
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.motion-enabled .hero-visual > img {
+  animation: image-arrive 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes image-arrive {
+  from {
+    opacity: 0.7;
+    transform: scale(1.025);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .image-caption {
@@ -433,9 +452,9 @@ h1 span {
   background: var(--surface);
   box-shadow: 0 1px 2px rgb(29 45 62 / 4%);
   transition:
-    border-color 160ms ease,
-    box-shadow 160ms ease,
-    transform 160ms ease;
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .service-card:hover {
@@ -453,6 +472,13 @@ h1 span {
   border-radius: 0.55rem;
   color: var(--blue);
   background: var(--blue-tint);
+  transition:
+    transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-color 240ms ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.05);
 }
 
 .service-icon-2,
@@ -490,8 +516,8 @@ h1 span {
   margin-left: auto;
   color: #8295a8;
   transition:
-    color 160ms ease,
-    transform 160ms ease;
+    color 220ms ease,
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .service-card:hover .service-arrow {
@@ -637,6 +663,29 @@ h1 span {
   font-size: 0.98rem;
 }
 
+[data-reveal] {
+  opacity: 1;
+}
+
+.motion-enabled [data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 600ms ease,
+    transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.motion-enabled [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: auto;
+}
+
+.motion-enabled .service-card[data-reveal].is-visible:hover {
+  transform: translateY(-2px);
+}
+
 @media (max-width: 900px) {
   .hero {
     min-height: auto;
@@ -683,18 +732,36 @@ h1 span {
     top: 64px;
     right: 0;
     left: 0;
-    display: none;
+    display: flex;
     align-items: stretch;
-    padding: 0.75rem 18px 1.1rem;
+    flex-direction: column;
+    gap: 0.85rem;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 18px;
     border-bottom: 1px solid var(--line);
     background: #fff;
+    opacity: 0;
+    pointer-events: none;
     box-shadow: 0 8px 16px rgb(29 45 62 / 8%);
+    transform: translateY(-6px);
+    transition:
+      max-height 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      opacity 200ms ease,
+      padding 220ms ease,
+      transform 220ms ease,
+      visibility 0s linear 220ms;
+    visibility: hidden;
   }
 
   .nav-content.is-open {
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
+    max-height: 320px;
+    padding: 0.75rem 18px 1.1rem;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition-delay: 0s;
+    visibility: visible;
   }
 
   .nav-links {
@@ -721,7 +788,7 @@ h1 span {
 
   h1 {
     margin-top: 1.1rem;
-    font-size: clamp(2.65rem, 11vw, 3.6rem);
+    font-size: clamp(1.95rem, 7.8vw, 2.4rem);
   }
 
   .hero-description {
@@ -731,7 +798,7 @@ h1 span {
 
   .hero-visual {
     max-height: 390px;
-    aspect-ratio: 1.35 / 1;
+    aspect-ratio: 1 / 1;
   }
 
   .services-section {
@@ -803,6 +870,8 @@ h1 span {
   *::before,
   *::after {
     scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }

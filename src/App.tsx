@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type IconName =
   | "arrow"
@@ -182,6 +182,7 @@ function Icon({ name, size = 22 }: { name: IconName; size?: number }) {
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -191,6 +192,42 @@ function App() {
     };
     document.addEventListener("keydown", closeOnEscape);
     return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
+
+  useEffect(() => {
+    const items = document.querySelectorAll<HTMLElement>("[data-reveal]");
+    if (!("IntersectionObserver" in window)) {
+      items.forEach((item) => item.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          currentObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -32px 0px" },
+    );
+
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const content = menuContentRef.current;
+    if (!content) return;
+    const mobileMenu = window.matchMedia("(max-width: 680px)");
+    const syncMenuAccessibility = () => {
+      if (!mobileMenu.matches || menuOpen) content.removeAttribute("inert");
+      else content.setAttribute("inert", "");
+    };
+
+    syncMenuAccessibility();
+    mobileMenu.addEventListener("change", syncMenuAccessibility);
+    return () => mobileMenu.removeEventListener("change", syncMenuAccessibility);
   }, [menuOpen]);
 
   return (
@@ -223,6 +260,7 @@ function App() {
           <div
             className={`nav-content${menuOpen ? " is-open" : ""}`}
             id="primary-links"
+            ref={menuContentRef}
           >
             <div className="nav-links">
               <a href="#services" onClick={() => setMenuOpen(false)}>
@@ -249,7 +287,7 @@ function App() {
 
       <main id="main">
         <section className="hero section-wrap" id="home">
-          <div className="hero-copy">
+          <div className="hero-copy" data-reveal>
             <div className="eyebrow">
               <span className="status-dot" />
               Local IT support · Naga City
@@ -283,10 +321,10 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-visual">
+          <div className="hero-visual" data-reveal>
             <img
-              src="/assets/images/svc_computer_repair.png"
-              alt="Technician working on a computer"
+              src="/assets/images/carolinatech-hero.jpg"
+              alt="CarolinaTech computer repair, CCTV, and networking services"
               fetchPriority="high"
             />
             <div className="image-caption">
@@ -302,16 +340,21 @@ function App() {
         </section>
 
         <section className="services-section section-wrap" id="services">
-          <div className="section-heading">
+          <div className="section-heading" data-reveal>
             <span className="section-kicker">Services</span>
             <h2>IT help, made simple.</h2>
-            <p>Tell us what’s not working. We’ll help you figure out the next step.</p>
+            <p lang="fil">
+              Tinatamad ka bang pumunta sa shop para magpagawa? Walang problema,
+              kami na ang pupunta sa’yo!
+            </p>
           </div>
 
           <div className="service-grid">
             {services.map((service, index) => (
               <a
                 className="service-card"
+                data-reveal
+                style={{ transitionDelay: `${(index % 3) * 70}ms` }}
                 href={`https://wa.me/639496437357?text=${encodeURIComponent(
                   `Hi CarolinaTech, I need help with ${service.title.toLowerCase()}.`,
                 )}`}
@@ -335,7 +378,7 @@ function App() {
         </section>
 
         <section className="about-section section-wrap" id="about">
-          <div className="about-intro">
+          <div className="about-intro" data-reveal>
             <span className="section-kicker">Why CarolinaTech</span>
             <h2>Good service.<br />No tech jargon.</h2>
             <p>
@@ -344,21 +387,21 @@ function App() {
             </p>
           </div>
           <div className="about-points">
-            <div className="about-point">
+            <div className="about-point" data-reveal>
               <span className="point-number">01</span>
               <div>
                 <strong>Tell us what you need</strong>
                 <p>Send a quick message or call.</p>
               </div>
             </div>
-            <div className="about-point">
+            <div className="about-point" data-reveal>
               <span className="point-number">02</span>
               <div>
                 <strong>Get a clear next step</strong>
                 <p>We’ll talk through the issue and options.</p>
               </div>
             </div>
-            <div className="about-point">
+            <div className="about-point" data-reveal>
               <span className="point-number">03</span>
               <div>
                 <strong>Get help on-site</strong>
@@ -369,12 +412,12 @@ function App() {
         </section>
 
         <section className="contact-section section-wrap" id="contact">
-          <div className="contact-copy">
+          <div className="contact-copy" data-reveal>
             <span className="section-kicker">Contact</span>
             <h2>Let’s get it sorted.</h2>
             <p>Describe the issue and we’ll get back to you.</p>
           </div>
-          <div className="contact-actions">
+          <div className="contact-actions" data-reveal>
             <a
               className="button button-primary"
               href="https://wa.me/639496437357"
@@ -392,7 +435,7 @@ function App() {
               <Icon name="mail" size={17} /> carolinatechs@gmail.com
             </a>
           </div>
-          <div className="contact-details">
+          <div className="contact-details" data-reveal>
             <span>
               <Icon name="pin" size={18} />
               Brgy. Carolina, Naga City, Camarines Sur
